@@ -6,6 +6,8 @@
 
   export async function load({ params }) {
     switch (params.slug) {
+      case 'product':
+      case 'slug':
       case 'kit-snack-caramelizado':
         ecomUtils.$ecomConfig.set('store_id', 1024);
         const { data } = await ecomClient.store({
@@ -17,7 +19,7 @@
     if (params.bar === 'def') {
       return { fallthrough: true };
     }
-    return {};
+    return { maxage: 300 };
   }
 </script>
 
