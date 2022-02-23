@@ -25,4 +25,15 @@
   }
 </script>
 
-<p>{@html description}</p>
+<script>
+  let elDescription;
+  if (!description) {
+    description = elDescription.outerHTML;
+  }
+</script>
+
+<article>
+  <div bind:this={elDescription}>
+    {@html description}
+  </div>
+</article>
