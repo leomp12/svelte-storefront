@@ -1,10 +1,12 @@
 <script context="module">
   import ecomUtils from '@ecomplus/utils';
   import ecomClient from '@ecomplus/client';
+  import { browser } from '$app/env';
 
   let description = 'foo';
 
   export async function load({ params }) {
+    if (browser) return;
     switch (params.slug) {
       case 'product':
       case 'slug':
