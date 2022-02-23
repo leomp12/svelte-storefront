@@ -6,7 +6,7 @@
   let description = 'foo';
 
   export async function load({ params }) {
-    if (browser) return;
+    if (browser) return {};
     switch (params.slug) {
       case 'product':
       case 'slug':
