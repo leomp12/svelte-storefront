@@ -3,7 +3,7 @@
   import ecomClient from '@ecomplus/client';
   import { browser } from '$app/env';
 
-  let description = 'foo';
+  let description;
 
   export async function load({ params }) {
     if (browser) return {};
