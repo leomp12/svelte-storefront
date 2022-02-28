@@ -4,13 +4,14 @@
   import { browser } from '$app/env';
 
   let description;
-
   export async function load({ params }) {
-    if (browser) return {};
     switch (params.slug) {
       case 'product':
       case 'slug':
       case 'kit-snack-caramelizado':
+        if (browser) {
+          await new Promise(resolve => setTimeout(resolve, 5000));
+        }
         ecomUtils.$ecomConfig.set('store_id', 1024);
         const { data } = await ecomClient.store({
           url: '/products/5d09197e24607a6a42d7140d',
@@ -25,15 +26,4 @@
   }
 </script>
 
-<script>
-  let elDescription;
-  if (!description) {
-    description = elDescription.outerHTML;
-  }
-</script>
-
-<article>
-  <div bind:this={elDescription}>
-    {@html description}
-  </div>
-</article>
+<p>{@html description}</p>
