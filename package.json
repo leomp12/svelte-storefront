@@ -17,7 +17,6 @@
   },
   "type": "module",
   "dependencies": {
-    "@ecomplus/client": "^2.2.1",
-    "@ecomplus/utils": "^1.4.1"
+    "@cloudcommerce/api": "0.0.8"
   }
 }
