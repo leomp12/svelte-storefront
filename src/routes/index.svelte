@@ -2,7 +2,7 @@
   let rand;
   export async function load() {
     rand = parseInt(Math.random() * 1000, 10);
-    return { maxage: 300 };
+    return { cache: { maxage: 3000 } };
   }
 </script>
 
